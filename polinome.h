@@ -24,11 +24,14 @@ public:
 
     friend ostream& operator<< (ostream&, Polinome&);
     friend istream& operator>> (istream&, Polinome&);
+    friend QString& operator<< (QString&, Polinome&);
 
     void change_print_mode(PrintMode);
     void change_an(number);
     void change_roots(number, int);
     void change_size(int);
+
+    int get_size();
 
     number count_val(number);
 

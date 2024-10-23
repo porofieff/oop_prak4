@@ -13,52 +13,6 @@
   <property name="windowTitle">
    <string>Interface</string>
   </property>
-  <widget class="QLabel" name="x_label">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>70</y>
-     <width>22</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>X = </string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="re_edit">
-   <property name="geometry">
-    <rect>
-     <x>76</x>
-     <y>70</y>
-     <width>46</width>
-     <height>26</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="im_edit">
-   <property name="geometry">
-    <rect>
-     <x>145</x>
-     <y>70</y>
-     <width>46</width>
-     <height>26</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="i_label">
-   <property name="geometry">
-    <rect>
-     <x>126</x>
-     <y>70</y>
-     <width>16</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>+i</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="do_but">
    <property name="geometry">
     <rect>
@@ -81,19 +35,6 @@ color: rgb(0, 0, 0);</string>
     <string>Выполнить!</string>
    </property>
   </widget>
-  <widget class="QLabel" name="an_label">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>70</y>
-     <width>22</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>a = </string>
-   </property>
-  </widget>
   <widget class="QComboBox" name="eprint_box">
    <property name="geometry">
     <rect>
@@ -114,7 +55,7 @@ color: rgb(0, 0, 0);</string>
     </property>
    </item>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -172,12 +113,12 @@ color: rgb(0, 0, 0);</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>400</x>
      <y>60</y>
-     <width>201</width>
+     <width>208</width>
      <height>41</height>
     </rect>
    </property>
@@ -191,6 +132,71 @@ color: rgb(0, 0, 0);</string>
     </item>
     <item row="0" column="1">
      <widget class="QLineEdit" name="new_size_edit"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>10</y>
+     <width>79</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="0" column="1">
+     <widget class="QLabel" name="polin_num_label">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="polin_text_label">
+      <property name="text">
+       <string>Корень №</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>231</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="0" column="0">
+     <widget class="QLabel" name="x_label">
+      <property name="text">
+       <string>X = </string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLabel" name="i_label">
+      <property name="text">
+       <string>+i</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QLineEdit" name="im_edit"/>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLineEdit" name="re_edit"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="an_label">
+      <property name="text">
+       <string>a = </string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

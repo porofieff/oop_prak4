@@ -64,6 +64,38 @@ ostream& operator<< (ostream& os, Polinome& pol)
     return os;
 }
 
+QString& operator<< (QString& os, Polinome& pol)
+{
+    if (pol.mode == PrintModeCanonic)
+    {
+        for (int i = pol.N; i > 0; i--)
+        {
+            os << pol.coefficents[i];
+            os += " x^";
+            os += QString().setNum(i);
+            os += " + ";
+        }
+        os << pol.coefficents[0];
+        os += "\n";
+    }
+    else
+    {
+        os << pol.coefficents[pol.N];
+        os += " * ";
+        for (int i = 0; i < pol.N - 1; i++)
+        {
+            os += "(x - ";
+            os << pol.roots[i];
+            os +=  ") * ";
+        }
+        os += "(x - ";
+        os << pol.roots[pol.N - 1];
+        os += ")";
+        os += "\n";
+    }
+    return os;
+}
+
 istream& operator>> (istream& is, Polinome& pol)
 {
     is >> pol.coefficents[pol.N];
@@ -100,4 +132,9 @@ void Polinome::change_size(int new_size)
     coefficents.change_size(new_size + 1);
     N = new_size;
     change_an(an);
+}
+
+int Polinome::get_size()
+{
+    return N;
 }

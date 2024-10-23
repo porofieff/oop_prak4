@@ -26,6 +26,16 @@ istream& operator>>(istream& is, complex& c)
     return is;
 }
 
+QString& operator<< (QString& s, complex c)
+{
+    s += "(";
+    s += QString().setNum(c.re);
+    s += "+";
+    s += QString().setNum(c.im);
+    s += "i)";
+    return s;
+}
+
 complex complex::operator*(complex c)
 {
     complex t;

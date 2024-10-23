@@ -1,7 +1,10 @@
 #ifndef COMPLEX_H
 #define COMPLEX_H
+
 #include <iostream>
 #include <cmath>
+#include <QString>
+
 using namespace std;
 
 
@@ -26,6 +29,7 @@ public:
     friend complex sqrt (complex);
     friend ostream& operator<<(ostream&, complex);
     friend istream& operator>>(istream&, complex&);
+    friend QString& operator<< (QString&, complex);
 
 };
 
