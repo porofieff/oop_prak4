@@ -24,8 +24,8 @@ private:
     void clear_face();
 
     int prev_butt = 0;
-    number a_n;
-    number x;
+    //number a_n;
+    //number x;
     Polinome polin;
 
 public slots:

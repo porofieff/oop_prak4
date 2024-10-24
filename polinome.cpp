@@ -24,11 +24,13 @@ Polinome::Polinome(number new_an, number new_roots[], int new_size)
 
 void Polinome::count_coefficents(number new_an)
 {
+    for (int i = 0; i < N; i++)
+        coefficents[i] = 0;
     coefficents[N] = new_an;
     coefficents[1] = number (1, 0);
     coefficents[0] = -roots[0];
 
-    for (int k = 2; k < N; k++)
+    for (int k = 2; k <= N; k++)
     {
         coefficents[k] = coefficents[k-1];
         for (int i = k-1; i > 0; i--)
@@ -37,7 +39,7 @@ void Polinome::count_coefficents(number new_an)
         }
         coefficents[0] = -coefficents[0] * roots[k-1];
     }
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i <= N; i++)
         coefficents[i] = coefficents[i] * new_an;
 }
 
@@ -127,11 +129,11 @@ void Polinome::change_roots(number new_root, int new_index)
 
 void Polinome::change_size(int new_size)
 {
-    number an = coefficents[N];
+    //number an = coefficents[N];
     roots.change_size(new_size);
     coefficents.change_size(new_size + 1);
     N = new_size;
-    change_an(an);
+    //change_an(an);
 }
 
 int Polinome::get_size()

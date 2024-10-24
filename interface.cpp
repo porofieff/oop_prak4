@@ -27,9 +27,13 @@ Interface::Interface(QWidget *parent)
 
     number a_n(3, 0);
     number n_roots[] = {number(3, 0), number(2, 0), number(1, 0)};
-    Polinome polin(a_n, n_roots, 3);
+    polin.change_size(3);
+    polin.change_an(a_n);
+    polin.change_roots(n_roots[0], 0);
+    polin.change_roots(n_roots[1], 1);
+    polin.change_roots(n_roots[2], 2);
     polin.change_print_mode(PrintModeClassic);
-    cout << polin;
+   // cout << polin;
 
     clear_face();
 
@@ -174,4 +178,3 @@ void Interface::on_do_but_clicked()
         ui->result_line->setText("Вы ничего не выбрали!");
     }
 }
-
