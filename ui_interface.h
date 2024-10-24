@@ -38,11 +38,12 @@ public:
     QGridLayout *gridLayout_3;
     QLabel *size_label;
     QLineEdit *new_size_edit;
-    QWidget *widget;
+    QWidget *layoutWidget2;
     QGridLayout *gridLayout_4;
     QLabel *polin_num_label;
     QLabel *polin_text_label;
-    QWidget *widget1;
+    QLabel *an_label_2;
+    QWidget *layoutWidget3;
     QGridLayout *gridLayout_5;
     QLabel *x_label;
     QLabel *i_label;
@@ -54,10 +55,10 @@ public:
     {
         if (Interface->objectName().isEmpty())
             Interface->setObjectName(QString::fromUtf8("Interface"));
-        Interface->resize(644, 469);
+        Interface->resize(695, 469);
         do_but = new QPushButton(Interface);
         do_but->setObjectName(QString::fromUtf8("do_but"));
-        do_but->setGeometry(QRect(30, 290, 581, 51));
+        do_but->setGeometry(QRect(30, 290, 621, 51));
         QFont font;
         font.setPointSize(30);
         do_but->setFont(font);
@@ -70,7 +71,7 @@ public:
         eprint_box->setGeometry(QRect(200, 60, 181, 41));
         layoutWidget = new QWidget(Interface);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(30, 350, 581, 81));
+        layoutWidget->setGeometry(QRect(30, 350, 627, 81));
         gridLayout_2 = new QGridLayout(layoutWidget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -112,7 +113,7 @@ public:
 
         layoutWidget1 = new QWidget(Interface);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(400, 60, 208, 41));
+        layoutWidget1->setGeometry(QRect(400, 60, 255, 41));
         gridLayout_3 = new QGridLayout(layoutWidget1);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -126,49 +127,54 @@ public:
 
         gridLayout_3->addWidget(new_size_edit, 0, 1, 1, 1);
 
-        widget = new QWidget(Interface);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(70, 10, 79, 44));
-        gridLayout_4 = new QGridLayout(widget);
+        layoutWidget2 = new QWidget(Interface);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(70, 10, 101, 55));
+        gridLayout_4 = new QGridLayout(layoutWidget2);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        polin_num_label = new QLabel(widget);
+        polin_num_label = new QLabel(layoutWidget2);
         polin_num_label->setObjectName(QString::fromUtf8("polin_num_label"));
 
-        gridLayout_4->addWidget(polin_num_label, 0, 1, 1, 1);
+        gridLayout_4->addWidget(polin_num_label, 1, 1, 1, 1);
 
-        polin_text_label = new QLabel(widget);
+        polin_text_label = new QLabel(layoutWidget2);
         polin_text_label->setObjectName(QString::fromUtf8("polin_text_label"));
 
-        gridLayout_4->addWidget(polin_text_label, 0, 0, 1, 1);
+        gridLayout_4->addWidget(polin_text_label, 1, 0, 1, 1);
 
-        widget1 = new QWidget(Interface);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(20, 60, 231, 41));
-        gridLayout_5 = new QGridLayout(widget1);
+        an_label_2 = new QLabel(layoutWidget2);
+        an_label_2->setObjectName(QString::fromUtf8("an_label_2"));
+
+        gridLayout_4->addWidget(an_label_2, 2, 0, 1, 1);
+
+        layoutWidget3 = new QWidget(Interface);
+        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(20, 60, 237, 41));
+        gridLayout_5 = new QGridLayout(layoutWidget3);
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
-        x_label = new QLabel(widget1);
+        x_label = new QLabel(layoutWidget3);
         x_label->setObjectName(QString::fromUtf8("x_label"));
 
         gridLayout_5->addWidget(x_label, 0, 0, 1, 1);
 
-        i_label = new QLabel(widget1);
+        i_label = new QLabel(layoutWidget3);
         i_label->setObjectName(QString::fromUtf8("i_label"));
 
         gridLayout_5->addWidget(i_label, 0, 3, 1, 1);
 
-        im_edit = new QLineEdit(widget1);
+        im_edit = new QLineEdit(layoutWidget3);
         im_edit->setObjectName(QString::fromUtf8("im_edit"));
 
         gridLayout_5->addWidget(im_edit, 0, 4, 1, 1);
 
-        re_edit = new QLineEdit(widget1);
+        re_edit = new QLineEdit(layoutWidget3);
         re_edit->setObjectName(QString::fromUtf8("re_edit"));
 
         gridLayout_5->addWidget(re_edit, 0, 2, 1, 1);
 
-        an_label = new QLabel(widget1);
+        an_label = new QLabel(layoutWidget3);
         an_label->setObjectName(QString::fromUtf8("an_label"));
 
         gridLayout_5->addWidget(an_label, 0, 1, 1, 1);
@@ -192,8 +198,9 @@ public:
         change_print_but->setText(QCoreApplication::translate("Interface", "\320\222\321\213\320\262\320\276\320\264 \320\277\320\276\320\273\320\270\320\275\320\276\320\274\320\260", nullptr));
         enter_pol_but->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\276\320\264 \320\277\320\276\320\273\320\270\320\275\320\276\320\274\320\260", nullptr));
         size_label->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\275\320\276\320\262\321\213\320\271 \321\200\320\260\320\267\320\274\320\265\321\200 =", nullptr));
-        polin_num_label->setText(QCoreApplication::translate("Interface", "1", nullptr));
+        polin_num_label->setText(QCoreApplication::translate("Interface", "0", nullptr));
         polin_text_label->setText(QCoreApplication::translate("Interface", "\320\232\320\276\321\200\320\265\320\275\321\214 \342\204\226", nullptr));
+        an_label_2->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 an", nullptr));
         x_label->setText(QCoreApplication::translate("Interface", "X = ", nullptr));
         i_label->setText(QCoreApplication::translate("Interface", "+i", nullptr));
         an_label->setText(QCoreApplication::translate("Interface", "a = ", nullptr));

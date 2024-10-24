@@ -11,11 +11,12 @@ void Interface::clear_face()
     ui->re_edit->hide();
     ui->im_edit->hide();
     ui->i_label->hide();
-    //ui->eprint_box->hide();
+    ui->eprint_box->hide();
     ui->size_label->hide();
     ui->new_size_edit->hide();
     ui->polin_num_label->hide();
     ui->polin_text_label->hide();
+    ui->an_label_2->hide();
 }
 
 Interface::Interface(QWidget *parent)
@@ -33,10 +34,8 @@ Interface::Interface(QWidget *parent)
     polin.change_roots(n_roots[1], 1);
     polin.change_roots(n_roots[2], 2);
     polin.change_print_mode(PrintModeClassic);
-   // cout << polin;
 
     clear_face();
-
 }
 
 Interface::~Interface()
@@ -47,7 +46,7 @@ Interface::~Interface()
 void Interface::on_change_an_but_clicked()
 {
     prev_butt = 1;
-
+    ui->an_label_2->show();
     ui->an_label->show();
     ui->im_edit->show();
     ui->re_edit->show();
@@ -69,9 +68,9 @@ void Interface::on_enter_X_but_clicked()
 void Interface::on_enter_pol_but_clicked()
 {
     prev_butt = 3;
-
-    ui->polin_num_label->show();
-    ui->polin_text_label->show();
+    ui->an_label_2->show();
+    //ui->polin_num_label->show();
+    //ui->polin_text_label->show();
 
     ui->an_label->show();
     ui->im_edit->show();
@@ -116,7 +115,7 @@ void Interface::on_do_but_clicked()
         str << polin;
         ui->result_line->setText(str);
 
-        //clear_face();
+        clear_face();
     }
     else if(prev_butt == 2)
     {
@@ -131,11 +130,10 @@ void Interface::on_do_but_clicked()
         QString str;
         str << polin.count_val(new_x);
         ui->result_line->setText(str);
+        clear_face();
     }
     else if(prev_butt == 3)
     {
-
-
         double new_re;
         double new_im;
 
@@ -144,12 +142,13 @@ void Interface::on_do_but_clicked()
 
         number new_an = number(new_re, new_im);
         polin.change_an(new_an);
+        ui->an_label_2->hide();
+        ui->polin_num_label->show();
+        ui->polin_text_label->show();
 
-
-        for (int i = 0; i < polin.get_size(); ++i)
+        for (int i = 0; i <= polin.get_size() - 1; i++)
         {
-            ui->polin_num_label->setNum(i + 1);
-
+            if()
         }
 
 
@@ -159,12 +158,18 @@ void Interface::on_do_but_clicked()
         if(ui->eprint_box->currentText() == "Классический")
         {
             polin.change_print_mode(PrintModeClassic);
-            cout<<polin;
+            QString s;
+            s << polin;
+            ui->result_line->setText(s);
+            clear_face();
         }
         else
         {
             polin.change_print_mode(PrintModeCanonic);
-            cout<<polin;
+            QString s;
+            s << polin;
+            ui->result_line->setText(s);
+            clear_face();
         }
     }
     else if(prev_butt == 5)
@@ -172,6 +177,7 @@ void Interface::on_do_but_clicked()
         int new_N = ui->new_size_edit->text().toInt();
         polin.change_size(new_N);
         ui->result_line->setText("Размер изменен");
+        clear_face();
     }
     else
     {

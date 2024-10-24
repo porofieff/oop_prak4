@@ -22,10 +22,8 @@ public:
 private:
     Ui::Interface *ui;
     void clear_face();
-
+    int num = 1;
     int prev_butt = 0;
-    //number a_n;
-    //number x;
     Polinome polin;
 
 public slots:
