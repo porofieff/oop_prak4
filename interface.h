@@ -22,7 +22,7 @@ public:
 private:
     Ui::Interface *ui;
     void clear_face();
-    int num = 1;
+    int num = 0;
     int prev_butt = 0;
     Polinome polin;
 

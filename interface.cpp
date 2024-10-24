@@ -68,10 +68,11 @@ void Interface::on_enter_X_but_clicked()
 void Interface::on_enter_pol_but_clicked()
 {
     prev_butt = 3;
-    ui->an_label_2->show();
+    //ui->an_label_2->show();
     //ui->polin_num_label->show();
     //ui->polin_text_label->show();
-
+    ui->polin_text_label->show();
+    ui->polin_num_label->show();
     ui->an_label->show();
     ui->im_edit->show();
     ui->re_edit->show();
@@ -134,7 +135,7 @@ void Interface::on_do_but_clicked()
     }
     else if(prev_butt == 3)
     {
-        double new_re;
+        /*double new_re;
         double new_im;
 
         new_re = ui->re_edit->text().toDouble();
@@ -144,13 +145,38 @@ void Interface::on_do_but_clicked()
         polin.change_an(new_an);
         ui->an_label_2->hide();
         ui->polin_num_label->show();
-        ui->polin_text_label->show();
+        ui->polin_text_label->show();*/
 
-        for (int i = 0; i <= polin.get_size() - 1; i++)
+        //ui->polin_text_label->show();
+        //ui->polin_num_label->show();
+        polin.change_roots(number(ui->re_edit->text().toDouble(), ui->im_edit->text().toDouble()), num);
+        if(num <= polin.get_size() - 2)
         {
-            if()
+            num++;
+            ui->polin_num_label->setText(QString::number(num + 1));
+            ui->re_edit->clear();
+            ui->im_edit->clear();
         }
+        else if(num - (polin.get_size() - 2) == 1)
+        {
+            ui->re_edit->clear();
+            ui->im_edit->clear();
+            ui->an_label_2->show();
+            double new_re;
+            double new_im;
 
+            new_re = ui->re_edit->text().toDouble();
+            new_im = ui->im_edit->text().toDouble();
+
+            number new_an = number(new_re, new_im);
+            polin.change_an(new_an);
+            num++;
+        }
+        else
+        {
+            clear_face();
+            return;
+        }
 
     }
     else if(prev_butt == 4)

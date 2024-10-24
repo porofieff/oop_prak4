@@ -198,7 +198,7 @@ public:
         change_print_but->setText(QCoreApplication::translate("Interface", "\320\222\321\213\320\262\320\276\320\264 \320\277\320\276\320\273\320\270\320\275\320\276\320\274\320\260", nullptr));
         enter_pol_but->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\276\320\264 \320\277\320\276\320\273\320\270\320\275\320\276\320\274\320\260", nullptr));
         size_label->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\275\320\276\320\262\321\213\320\271 \321\200\320\260\320\267\320\274\320\265\321\200 =", nullptr));
-        polin_num_label->setText(QCoreApplication::translate("Interface", "0", nullptr));
+        polin_num_label->setText(QCoreApplication::translate("Interface", "1", nullptr));
         polin_text_label->setText(QCoreApplication::translate("Interface", "\320\232\320\276\321\200\320\265\320\275\321\214 \342\204\226", nullptr));
         an_label_2->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 an", nullptr));
         x_label->setText(QCoreApplication::translate("Interface", "X = ", nullptr));
