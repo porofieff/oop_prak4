@@ -38,7 +38,7 @@ public:
     QGridLayout *gridLayout_3;
     QLineEdit *new_size_edit;
     QLabel *size_label;
-    QLabel *label;
+    QLabel *index_change_label;
     QLineEdit *index_change_edit;
     QWidget *layoutWidget2;
     QGridLayout *gridLayout_4;
@@ -53,6 +53,7 @@ public:
     QLabel *an_label;
     QLabel *x_label;
     QPushButton *index_change_buttom;
+    QPushButton *exit_buttom;
 
     void setupUi(QWidget *Interface)
     {
@@ -130,10 +131,10 @@ public:
 
         gridLayout_3->addWidget(size_label, 0, 0, 1, 1);
 
-        label = new QLabel(layoutWidget1);
-        label->setObjectName(QString::fromUtf8("label"));
+        index_change_label = new QLabel(layoutWidget1);
+        index_change_label->setObjectName(QString::fromUtf8("index_change_label"));
 
-        gridLayout_3->addWidget(label, 1, 0, 1, 1);
+        gridLayout_3->addWidget(index_change_label, 1, 0, 1, 1);
 
         index_change_edit = new QLineEdit(layoutWidget1);
         index_change_edit->setObjectName(QString::fromUtf8("index_change_edit"));
@@ -195,6 +196,9 @@ public:
         index_change_buttom = new QPushButton(Interface);
         index_change_buttom->setObjectName(QString::fromUtf8("index_change_buttom"));
         index_change_buttom->setGeometry(QRect(230, 430, 231, 29));
+        exit_buttom = new QPushButton(Interface);
+        exit_buttom->setObjectName(QString::fromUtf8("exit_buttom"));
+        exit_buttom->setGeometry(QRect(590, 0, 93, 29));
 
         retranslateUi(Interface);
 
@@ -214,7 +218,7 @@ public:
         change_print_but->setText(QCoreApplication::translate("Interface", "\320\222\321\213\320\262\320\276\320\264 \320\277\320\276\320\273\320\270\320\275\320\276\320\274\320\260", nullptr));
         enter_pol_but->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\276\320\264 \320\277\320\276\320\273\320\270\320\275\320\276\320\274\320\260", nullptr));
         size_label->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\275\320\276\320\262\321\213\320\271 \321\200\320\260\320\267\320\274\320\265\321\200 =", nullptr));
-        label->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\270\320\275\320\264\320\265\320\272\321\201 \320\272\320\276\321\200\320\275\321\217 =", nullptr));
+        index_change_label->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\270\320\275\320\264\320\265\320\272\321\201 \320\272\320\276\321\200\320\275\321\217 =", nullptr));
         polin_num_label->setText(QCoreApplication::translate("Interface", "1", nullptr));
         polin_text_label->setText(QCoreApplication::translate("Interface", "\320\232\320\276\321\200\320\265\320\275\321\214 \342\204\226", nullptr));
         an_label_2->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 an", nullptr));
@@ -222,6 +226,7 @@ public:
         an_label->setText(QCoreApplication::translate("Interface", "a = ", nullptr));
         x_label->setText(QCoreApplication::translate("Interface", "X = ", nullptr));
         index_change_buttom->setText(QCoreApplication::translate("Interface", "\320\230\320\267\320\274\320\265\320\275\320\265\320\275\320\270\320\265 \320\272\320\276\321\200\320\275\321\217 \320\277\320\276 \320\270\320\275\320\264\320\265\320\272\321\201\321\203", nullptr));
+        exit_buttom->setText(QCoreApplication::translate("Interface", "\320\222\321\213\321\205\320\276\320\264", nullptr));
     } // retranslateUi
 
 };

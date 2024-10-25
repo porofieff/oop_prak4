@@ -17,8 +17,8 @@ void Interface::clear_face()
     ui->polin_num_label->hide();
     ui->polin_text_label->hide();
     ui->an_label_2->hide();
-    ui->index_change_buttom->hide();
-
+    ui->index_change_label->hide();
+    ui->index_change_edit->hide();
 
 }
 
@@ -187,7 +187,8 @@ void Interface::on_do_but_clicked()
             number new_an = number(new_re, new_im);
             polin.change_an(new_an);
             clear_face();
-            num++;
+            num = 0;
+            return;
         }
 
 
@@ -241,4 +242,10 @@ void Interface::on_do_but_clicked()
 }
 
 
+
+
+void Interface::on_exit_buttom_clicked()
+{
+    close();
+}
 

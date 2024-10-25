@@ -35,5 +35,6 @@ public slots:
     void on_do_but_clicked();
 private slots:
     void on_index_change_buttom_clicked();
+    void on_exit_buttom_clicked();
 };
 #endif // INTERFACE_H
