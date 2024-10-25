@@ -36,8 +36,10 @@ public:
     QPushButton *enter_pol_but;
     QWidget *layoutWidget1;
     QGridLayout *gridLayout_3;
-    QLabel *size_label;
     QLineEdit *new_size_edit;
+    QLabel *size_label;
+    QLabel *label;
+    QLineEdit *index_change_edit;
     QWidget *layoutWidget2;
     QGridLayout *gridLayout_4;
     QLabel *polin_num_label;
@@ -45,17 +47,18 @@ public:
     QLabel *an_label_2;
     QWidget *layoutWidget3;
     QGridLayout *gridLayout_5;
-    QLabel *x_label;
-    QLabel *i_label;
     QLineEdit *im_edit;
     QLineEdit *re_edit;
+    QLabel *i_label;
     QLabel *an_label;
+    QLabel *x_label;
+    QPushButton *index_change_buttom;
 
     void setupUi(QWidget *Interface)
     {
         if (Interface->objectName().isEmpty())
             Interface->setObjectName(QString::fromUtf8("Interface"));
-        Interface->resize(695, 469);
+        Interface->resize(695, 479);
         do_but = new QPushButton(Interface);
         do_but->setObjectName(QString::fromUtf8("do_but"));
         do_but->setGeometry(QRect(30, 290, 621, 51));
@@ -113,19 +116,29 @@ public:
 
         layoutWidget1 = new QWidget(Interface);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(400, 60, 255, 41));
+        layoutWidget1->setGeometry(QRect(400, 60, 255, 61));
         gridLayout_3 = new QGridLayout(layoutWidget1);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
+        new_size_edit = new QLineEdit(layoutWidget1);
+        new_size_edit->setObjectName(QString::fromUtf8("new_size_edit"));
+
+        gridLayout_3->addWidget(new_size_edit, 0, 1, 1, 1);
+
         size_label = new QLabel(layoutWidget1);
         size_label->setObjectName(QString::fromUtf8("size_label"));
 
         gridLayout_3->addWidget(size_label, 0, 0, 1, 1);
 
-        new_size_edit = new QLineEdit(layoutWidget1);
-        new_size_edit->setObjectName(QString::fromUtf8("new_size_edit"));
+        label = new QLabel(layoutWidget1);
+        label->setObjectName(QString::fromUtf8("label"));
 
-        gridLayout_3->addWidget(new_size_edit, 0, 1, 1, 1);
+        gridLayout_3->addWidget(label, 1, 0, 1, 1);
+
+        index_change_edit = new QLineEdit(layoutWidget1);
+        index_change_edit->setObjectName(QString::fromUtf8("index_change_edit"));
+
+        gridLayout_3->addWidget(index_change_edit, 1, 1, 1, 1);
 
         layoutWidget2 = new QWidget(Interface);
         layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
@@ -150,20 +163,10 @@ public:
 
         layoutWidget3 = new QWidget(Interface);
         layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(20, 60, 237, 41));
+        layoutWidget3->setGeometry(QRect(20, 60, 237, 94));
         gridLayout_5 = new QGridLayout(layoutWidget3);
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
-        x_label = new QLabel(layoutWidget3);
-        x_label->setObjectName(QString::fromUtf8("x_label"));
-
-        gridLayout_5->addWidget(x_label, 0, 0, 1, 1);
-
-        i_label = new QLabel(layoutWidget3);
-        i_label->setObjectName(QString::fromUtf8("i_label"));
-
-        gridLayout_5->addWidget(i_label, 0, 3, 1, 1);
-
         im_edit = new QLineEdit(layoutWidget3);
         im_edit->setObjectName(QString::fromUtf8("im_edit"));
 
@@ -174,11 +177,24 @@ public:
 
         gridLayout_5->addWidget(re_edit, 0, 2, 1, 1);
 
+        i_label = new QLabel(layoutWidget3);
+        i_label->setObjectName(QString::fromUtf8("i_label"));
+
+        gridLayout_5->addWidget(i_label, 0, 3, 1, 1);
+
         an_label = new QLabel(layoutWidget3);
         an_label->setObjectName(QString::fromUtf8("an_label"));
 
         gridLayout_5->addWidget(an_label, 0, 1, 1, 1);
 
+        x_label = new QLabel(layoutWidget3);
+        x_label->setObjectName(QString::fromUtf8("x_label"));
+
+        gridLayout_5->addWidget(x_label, 0, 0, 1, 1);
+
+        index_change_buttom = new QPushButton(Interface);
+        index_change_buttom->setObjectName(QString::fromUtf8("index_change_buttom"));
+        index_change_buttom->setGeometry(QRect(230, 430, 231, 29));
 
         retranslateUi(Interface);
 
@@ -198,12 +214,14 @@ public:
         change_print_but->setText(QCoreApplication::translate("Interface", "\320\222\321\213\320\262\320\276\320\264 \320\277\320\276\320\273\320\270\320\275\320\276\320\274\320\260", nullptr));
         enter_pol_but->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\276\320\264 \320\277\320\276\320\273\320\270\320\275\320\276\320\274\320\260", nullptr));
         size_label->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\275\320\276\320\262\321\213\320\271 \321\200\320\260\320\267\320\274\320\265\321\200 =", nullptr));
+        label->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\270\320\275\320\264\320\265\320\272\321\201 \320\272\320\276\321\200\320\275\321\217 =", nullptr));
         polin_num_label->setText(QCoreApplication::translate("Interface", "1", nullptr));
         polin_text_label->setText(QCoreApplication::translate("Interface", "\320\232\320\276\321\200\320\265\320\275\321\214 \342\204\226", nullptr));
         an_label_2->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 an", nullptr));
-        x_label->setText(QCoreApplication::translate("Interface", "X = ", nullptr));
         i_label->setText(QCoreApplication::translate("Interface", "+i", nullptr));
         an_label->setText(QCoreApplication::translate("Interface", "a = ", nullptr));
+        x_label->setText(QCoreApplication::translate("Interface", "X = ", nullptr));
+        index_change_buttom->setText(QCoreApplication::translate("Interface", "\320\230\320\267\320\274\320\265\320\275\320\265\320\275\320\270\320\265 \320\272\320\276\321\200\320\275\321\217 \320\277\320\276 \320\270\320\275\320\264\320\265\320\272\321\201\321\203", nullptr));
     } // retranslateUi
 
 };

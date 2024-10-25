@@ -33,5 +33,7 @@ public slots:
     void on_change_print_but_clicked();
     void on_change_len_but_clicked();
     void on_do_but_clicked();
+private slots:
+    void on_index_change_buttom_clicked();
 };
 #endif // INTERFACE_H

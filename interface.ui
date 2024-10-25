@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>695</width>
-    <height>469</height>
+    <height>479</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -119,10 +119,13 @@ color: rgb(0, 0, 0);</string>
      <x>400</x>
      <y>60</y>
      <width>255</width>
-     <height>41</height>
+     <height>61</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="new_size_edit"/>
+    </item>
     <item row="0" column="0">
      <widget class="QLabel" name="size_label">
       <property name="text">
@@ -130,8 +133,15 @@ color: rgb(0, 0, 0);</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="new_size_edit"/>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Введите индекс корня =</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="index_change_edit"/>
     </item>
    </layout>
   </widget>
@@ -174,16 +184,15 @@ color: rgb(0, 0, 0);</string>
      <x>20</x>
      <y>60</y>
      <width>237</width>
-     <height>41</height>
+     <height>94</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_5">
-    <item row="0" column="0">
-     <widget class="QLabel" name="x_label">
-      <property name="text">
-       <string>X = </string>
-      </property>
-     </widget>
+    <item row="0" column="4">
+     <widget class="QLineEdit" name="im_edit"/>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLineEdit" name="re_edit"/>
     </item>
     <item row="0" column="3">
      <widget class="QLabel" name="i_label">
@@ -192,12 +201,6 @@ color: rgb(0, 0, 0);</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="4">
-     <widget class="QLineEdit" name="im_edit"/>
-    </item>
-    <item row="0" column="2">
-     <widget class="QLineEdit" name="re_edit"/>
-    </item>
     <item row="0" column="1">
      <widget class="QLabel" name="an_label">
       <property name="text">
@@ -205,7 +208,27 @@ color: rgb(0, 0, 0);</string>
       </property>
      </widget>
     </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="x_label">
+      <property name="text">
+       <string>X = </string>
+      </property>
+     </widget>
+    </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="index_change_buttom">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>430</y>
+     <width>231</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Изменение корня по индексу</string>
+   </property>
   </widget>
  </widget>
  <resources/>

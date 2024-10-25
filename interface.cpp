@@ -17,6 +17,9 @@ void Interface::clear_face()
     ui->polin_num_label->hide();
     ui->polin_text_label->hide();
     ui->an_label_2->hide();
+    ui->index_change_buttom->hide();
+
+
 }
 
 Interface::Interface(QWidget *parent)
@@ -97,6 +100,16 @@ void Interface::on_change_len_but_clicked()
     ui->size_label->show();
 }
 
+void Interface::on_index_change_buttom_clicked()
+{
+    prev_butt = 6;
+    ui->re_edit->show();
+    ui->im_edit->show();
+    ui->i_label->show();
+    ui->index_change_edit->show();
+    ui->polin_text_label->show();
+}
+
 
 void Interface::on_do_but_clicked()
 {
@@ -135,48 +148,48 @@ void Interface::on_do_but_clicked()
     }
     else if(prev_butt == 3)
     {
-        /*double new_re;
-        double new_im;
 
-        new_re = ui->re_edit->text().toDouble();
-        new_im = ui->im_edit->text().toDouble();
-
-        number new_an = number(new_re, new_im);
-        polin.change_an(new_an);
-        ui->an_label_2->hide();
-        ui->polin_num_label->show();
-        ui->polin_text_label->show();*/
-
-        //ui->polin_text_label->show();
-        //ui->polin_num_label->show();
-        polin.change_roots(number(ui->re_edit->text().toDouble(), ui->im_edit->text().toDouble()), num);
-        if(num <= polin.get_size() - 2)
+        //polin.change_roots(number(ui->re_edit->text().toDouble(), ui->im_edit->text().toDouble()), num);
+        if(num <= polin.get_size() - 1)
         {
+            polin.change_roots(number(ui->re_edit->text().toDouble(), ui->im_edit->text().toDouble()), num);
             num++;
             ui->polin_num_label->setText(QString::number(num + 1));
-            ui->re_edit->clear();
-            ui->im_edit->clear();
-        }
-        else if(num - (polin.get_size() - 2) == 1)
-        {
-            ui->re_edit->clear();
-            ui->im_edit->clear();
-            ui->an_label_2->show();
-            double new_re;
-            double new_im;
+            if(num - (polin.get_size() - 1) == 1)
+            {
+                ui->an_label_2->show();
+                ui->polin_num_label->hide();
+                ui->polin_text_label->hide();
+            }
 
-            new_re = ui->re_edit->text().toDouble();
-            new_im = ui->im_edit->text().toDouble();
+            ui->re_edit->clear();
+            ui->im_edit->clear();
+
+        }
+        else if(num - (polin.get_size() - 1) == 1)
+        {
+            //ui->re_edit->clear();
+            //ui->im_edit->clear();
+
+
+            //ui->an_label_2->show();
+            //ui->polin_num_label->hide();
+            //ui->polin_text_label->hide();
+
+
+
+            double new_re = ui->re_edit->text().toDouble();
+            double new_im = ui->im_edit->text().toDouble();
+            ui->re_edit->clear();
+            ui->im_edit->clear();
+
 
             number new_an = number(new_re, new_im);
             polin.change_an(new_an);
+            clear_face();
             num++;
         }
-        else
-        {
-            clear_face();
-            return;
-        }
+
 
     }
     else if(prev_butt == 4)
@@ -205,8 +218,27 @@ void Interface::on_do_but_clicked()
         ui->result_line->setText("Размер изменен");
         clear_face();
     }
+    else if(prev_butt == 6)
+    {
+        int index = ui->index_change_edit->text().toInt();
+        number root = number(ui->re_edit->text().toDouble(), ui->im_edit->text().toDouble());
+        if((index > polin.get_size() - 1) || (index < 0))
+        {
+            ui->result_line->setText("Введен неверный индекс");
+            clear_face();
+        }
+        else
+        {
+            polin.change_roots(root, index);
+            ui->result_line->setText("Корень изменен");
+            clear_face();
+        }
+    }
     else
     {
         ui->result_line->setText("Вы ничего не выбрали!");
     }
 }
+
+
+
