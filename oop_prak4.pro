@@ -20,7 +20,8 @@ HEADERS += \
     complex.h \
     interface.h \
     number.h \
-    polinome.h
+    polinome.h \
+    ui_interface.h
 
 FORMS += \
     interface.ui

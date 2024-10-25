@@ -10,8 +10,14 @@
     <height>479</height>
    </rect>
   </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>Interface</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QPushButton" name="do_but">
    <property name="geometry">
@@ -38,8 +44,8 @@ color: rgb(0, 0, 0);</string>
   <widget class="QComboBox" name="eprint_box">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>60</y>
+     <x>210</x>
+     <y>30</y>
      <width>181</width>
      <height>41</height>
     </rect>
@@ -58,9 +64,9 @@ color: rgb(0, 0, 0);</string>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>350</y>
-     <width>627</width>
+     <x>10</x>
+     <y>360</y>
+     <width>704</width>
      <height>81</height>
     </rect>
    </property>
@@ -74,17 +80,17 @@ color: rgb(0, 0, 0);</string>
     </item>
     <item row="1" column="0">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="1">
-       <widget class="QPushButton" name="enter_X_but">
-        <property name="text">
-         <string>Ввод Х</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="4">
        <widget class="QPushButton" name="change_len_but">
         <property name="text">
          <string>Изменить размер </string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="enter_pol_but">
+        <property name="text">
+         <string>Ввод полинома</string>
         </property>
        </widget>
       </item>
@@ -95,6 +101,13 @@ color: rgb(0, 0, 0);</string>
         </property>
        </widget>
       </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="enter_X_but">
+        <property name="text">
+         <string>Ввод Х</string>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="3">
        <widget class="QPushButton" name="change_print_but">
         <property name="text">
@@ -102,10 +115,15 @@ color: rgb(0, 0, 0);</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="enter_pol_but">
+      <item row="0" column="5">
+       <widget class="QPushButton" name="index_change_buttom">
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
         <property name="text">
-         <string>Ввод полинома</string>
+         <string>Изменение корня по индексу</string>
         </property>
        </widget>
       </item>
@@ -188,11 +206,15 @@ color: rgb(0, 0, 0);</string>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_5">
+    <item row="0" column="0">
+     <widget class="QLabel" name="x_label">
+      <property name="text">
+       <string>X = </string>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="4">
      <widget class="QLineEdit" name="im_edit"/>
-    </item>
-    <item row="0" column="2">
-     <widget class="QLineEdit" name="re_edit"/>
     </item>
     <item row="0" column="3">
      <widget class="QLabel" name="i_label">
@@ -208,27 +230,10 @@ color: rgb(0, 0, 0);</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="x_label">
-      <property name="text">
-       <string>X = </string>
-      </property>
-     </widget>
+    <item row="0" column="2">
+     <widget class="QLineEdit" name="re_edit"/>
     </item>
    </layout>
-  </widget>
-  <widget class="QPushButton" name="index_change_buttom">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>430</y>
-     <width>231</width>
-     <height>29</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Изменение корня по индексу</string>
-   </property>
   </widget>
   <widget class="QPushButton" name="exit_buttom">
    <property name="geometry">

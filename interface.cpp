@@ -9,16 +9,20 @@ void Interface::clear_face()
     ui->x_label->hide();
     ui->an_label->hide();
     ui->re_edit->hide();
+    ui->re_edit->setText("0");
     ui->im_edit->hide();
+    ui->im_edit->setText("0");
     ui->i_label->hide();
     ui->eprint_box->hide();
     ui->size_label->hide();
     ui->new_size_edit->hide();
+    ui->new_size_edit->setText("0");
     ui->polin_num_label->hide();
     ui->polin_text_label->hide();
     ui->an_label_2->hide();
     ui->index_change_label->hide();
     ui->index_change_edit->hide();
+    ui->index_change_edit->setText("1");
 
 }
 
@@ -48,6 +52,8 @@ Interface::~Interface()
 
 void Interface::on_change_an_but_clicked()
 {
+    clear_face();
+
     prev_butt = 1;
     ui->an_label_2->show();
     ui->an_label->show();
@@ -59,6 +65,8 @@ void Interface::on_change_an_but_clicked()
 
 void Interface::on_enter_X_but_clicked()
 {
+    clear_face();
+
     prev_butt = 2;
 
     ui->x_label->show();
@@ -70,6 +78,8 @@ void Interface::on_enter_X_but_clicked()
 
 void Interface::on_enter_pol_but_clicked()
 {
+    clear_face();
+
     prev_butt = 3;
     //ui->an_label_2->show();
     //ui->polin_num_label->show();
@@ -86,6 +96,8 @@ void Interface::on_enter_pol_but_clicked()
 
 void Interface::on_change_print_but_clicked()
 {
+    clear_face();
+
     prev_butt = 4;
 
     ui->eprint_box->show();
@@ -94,6 +106,8 @@ void Interface::on_change_print_but_clicked()
 
 void Interface::on_change_len_but_clicked()
 {
+    clear_face();
+
     prev_butt = 5;
 
     ui->new_size_edit->show();
@@ -102,6 +116,8 @@ void Interface::on_change_len_but_clicked()
 
 void Interface::on_index_change_buttom_clicked()
 {
+    clear_face();
+
     prev_butt = 6;
     ui->re_edit->show();
     ui->im_edit->show();
@@ -113,6 +129,7 @@ void Interface::on_index_change_buttom_clicked()
 
 void Interface::on_do_but_clicked()
 {
+
     if(prev_butt == 1)
     {
         double new_re;
@@ -129,6 +146,7 @@ void Interface::on_do_but_clicked()
         str << polin;
         ui->result_line->setText(str);
 
+        num = 0;
         clear_face();
     }
     else if(prev_butt == 2)
@@ -144,6 +162,8 @@ void Interface::on_do_but_clicked()
         QString str;
         str << polin.count_val(new_x);
         ui->result_line->setText(str);
+        num = 0;
+
         clear_face();
     }
     else if(prev_butt == 3)
@@ -188,6 +208,8 @@ void Interface::on_do_but_clicked()
             polin.change_an(new_an);
             clear_face();
             num = 0;
+            QString one = "1";
+            ui->polin_num_label->setText(one);
             return;
         }
 
@@ -201,6 +223,8 @@ void Interface::on_do_but_clicked()
             QString s;
             s << polin;
             ui->result_line->setText(s);
+            num = 0;
+
             clear_face();
         }
         else
@@ -209,6 +233,8 @@ void Interface::on_do_but_clicked()
             QString s;
             s << polin;
             ui->result_line->setText(s);
+            num = 0;
+
             clear_face();
         }
     }
@@ -217,6 +243,8 @@ void Interface::on_do_but_clicked()
         int new_N = ui->new_size_edit->text().toInt();
         polin.change_size(new_N);
         ui->result_line->setText("Размер изменен");
+        num = 0;
+
         clear_face();
     }
     else if(prev_butt == 6)
@@ -226,12 +254,16 @@ void Interface::on_do_but_clicked()
         if((index > polin.get_size() - 1) || (index < 0))
         {
             ui->result_line->setText("Введен неверный индекс");
+            num = 0;
+
             clear_face();
         }
         else
         {
             polin.change_roots(root, index);
             ui->result_line->setText("Корень изменен");
+            num = 0;
+
             clear_face();
         }
     }

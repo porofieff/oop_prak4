@@ -29,11 +29,12 @@ public:
     QGridLayout *gridLayout_2;
     QLineEdit *result_line;
     QGridLayout *gridLayout;
-    QPushButton *enter_X_but;
     QPushButton *change_len_but;
-    QPushButton *change_an_but;
-    QPushButton *change_print_but;
     QPushButton *enter_pol_but;
+    QPushButton *change_an_but;
+    QPushButton *enter_X_but;
+    QPushButton *change_print_but;
+    QPushButton *index_change_buttom;
     QWidget *layoutWidget1;
     QGridLayout *gridLayout_3;
     QLineEdit *new_size_edit;
@@ -47,12 +48,11 @@ public:
     QLabel *an_label_2;
     QWidget *layoutWidget3;
     QGridLayout *gridLayout_5;
+    QLabel *x_label;
     QLineEdit *im_edit;
-    QLineEdit *re_edit;
     QLabel *i_label;
     QLabel *an_label;
-    QLabel *x_label;
-    QPushButton *index_change_buttom;
+    QLineEdit *re_edit;
     QPushButton *exit_buttom;
 
     void setupUi(QWidget *Interface)
@@ -60,6 +60,8 @@ public:
         if (Interface->objectName().isEmpty())
             Interface->setObjectName(QString::fromUtf8("Interface"));
         Interface->resize(695, 479);
+        Interface->setCursor(QCursor(Qt::ArrowCursor));
+        Interface->setStyleSheet(QString::fromUtf8(""));
         do_but = new QPushButton(Interface);
         do_but->setObjectName(QString::fromUtf8("do_but"));
         do_but->setGeometry(QRect(30, 290, 621, 51));
@@ -72,10 +74,10 @@ public:
         eprint_box->addItem(QString());
         eprint_box->addItem(QString());
         eprint_box->setObjectName(QString::fromUtf8("eprint_box"));
-        eprint_box->setGeometry(QRect(200, 60, 181, 41));
+        eprint_box->setGeometry(QRect(210, 30, 181, 41));
         layoutWidget = new QWidget(Interface);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(30, 350, 627, 81));
+        layoutWidget->setGeometry(QRect(10, 360, 704, 81));
         gridLayout_2 = new QGridLayout(layoutWidget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -87,30 +89,38 @@ public:
 
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        enter_X_but = new QPushButton(layoutWidget);
-        enter_X_but->setObjectName(QString::fromUtf8("enter_X_but"));
-
-        gridLayout->addWidget(enter_X_but, 0, 1, 1, 1);
-
         change_len_but = new QPushButton(layoutWidget);
         change_len_but->setObjectName(QString::fromUtf8("change_len_but"));
 
         gridLayout->addWidget(change_len_but, 0, 4, 1, 1);
+
+        enter_pol_but = new QPushButton(layoutWidget);
+        enter_pol_but->setObjectName(QString::fromUtf8("enter_pol_but"));
+
+        gridLayout->addWidget(enter_pol_but, 0, 2, 1, 1);
 
         change_an_but = new QPushButton(layoutWidget);
         change_an_but->setObjectName(QString::fromUtf8("change_an_but"));
 
         gridLayout->addWidget(change_an_but, 0, 0, 1, 1);
 
+        enter_X_but = new QPushButton(layoutWidget);
+        enter_X_but->setObjectName(QString::fromUtf8("enter_X_but"));
+
+        gridLayout->addWidget(enter_X_but, 0, 1, 1, 1);
+
         change_print_but = new QPushButton(layoutWidget);
         change_print_but->setObjectName(QString::fromUtf8("change_print_but"));
 
         gridLayout->addWidget(change_print_but, 0, 3, 1, 1);
 
-        enter_pol_but = new QPushButton(layoutWidget);
-        enter_pol_but->setObjectName(QString::fromUtf8("enter_pol_but"));
+        index_change_buttom = new QPushButton(layoutWidget);
+        index_change_buttom->setObjectName(QString::fromUtf8("index_change_buttom"));
+        QFont font1;
+        font1.setPointSize(7);
+        index_change_buttom->setFont(font1);
 
-        gridLayout->addWidget(enter_pol_but, 0, 2, 1, 1);
+        gridLayout->addWidget(index_change_buttom, 0, 5, 1, 1);
 
 
         gridLayout_2->addLayout(gridLayout, 1, 0, 1, 1);
@@ -168,15 +178,15 @@ public:
         gridLayout_5 = new QGridLayout(layoutWidget3);
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
+        x_label = new QLabel(layoutWidget3);
+        x_label->setObjectName(QString::fromUtf8("x_label"));
+
+        gridLayout_5->addWidget(x_label, 0, 0, 1, 1);
+
         im_edit = new QLineEdit(layoutWidget3);
         im_edit->setObjectName(QString::fromUtf8("im_edit"));
 
         gridLayout_5->addWidget(im_edit, 0, 4, 1, 1);
-
-        re_edit = new QLineEdit(layoutWidget3);
-        re_edit->setObjectName(QString::fromUtf8("re_edit"));
-
-        gridLayout_5->addWidget(re_edit, 0, 2, 1, 1);
 
         i_label = new QLabel(layoutWidget3);
         i_label->setObjectName(QString::fromUtf8("i_label"));
@@ -188,14 +198,11 @@ public:
 
         gridLayout_5->addWidget(an_label, 0, 1, 1, 1);
 
-        x_label = new QLabel(layoutWidget3);
-        x_label->setObjectName(QString::fromUtf8("x_label"));
+        re_edit = new QLineEdit(layoutWidget3);
+        re_edit->setObjectName(QString::fromUtf8("re_edit"));
 
-        gridLayout_5->addWidget(x_label, 0, 0, 1, 1);
+        gridLayout_5->addWidget(re_edit, 0, 2, 1, 1);
 
-        index_change_buttom = new QPushButton(Interface);
-        index_change_buttom->setObjectName(QString::fromUtf8("index_change_buttom"));
-        index_change_buttom->setGeometry(QRect(230, 430, 231, 29));
         exit_buttom = new QPushButton(Interface);
         exit_buttom->setObjectName(QString::fromUtf8("exit_buttom"));
         exit_buttom->setGeometry(QRect(590, 0, 93, 29));
@@ -212,20 +219,20 @@ public:
         eprint_box->setItemText(0, QCoreApplication::translate("Interface", "\320\232\320\273\320\260\321\201\321\201\320\270\321\207\320\265\321\201\320\272\320\270\320\271", nullptr));
         eprint_box->setItemText(1, QCoreApplication::translate("Interface", "\320\232\320\260\320\275\320\276\320\275\320\270\321\207\320\265\321\201\320\272\320\270\320\271", nullptr));
 
-        enter_X_but->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\276\320\264 \320\245", nullptr));
         change_len_but->setText(QCoreApplication::translate("Interface", "\320\230\320\267\320\274\320\265\320\275\320\270\321\202\321\214 \321\200\320\260\320\267\320\274\320\265\321\200 ", nullptr));
-        change_an_but->setText(QCoreApplication::translate("Interface", "\320\230\320\267\320\274\320\265\320\275\320\265\320\275\320\270\320\265 a_n", nullptr));
-        change_print_but->setText(QCoreApplication::translate("Interface", "\320\222\321\213\320\262\320\276\320\264 \320\277\320\276\320\273\320\270\320\275\320\276\320\274\320\260", nullptr));
         enter_pol_but->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\276\320\264 \320\277\320\276\320\273\320\270\320\275\320\276\320\274\320\260", nullptr));
+        change_an_but->setText(QCoreApplication::translate("Interface", "\320\230\320\267\320\274\320\265\320\275\320\265\320\275\320\270\320\265 a_n", nullptr));
+        enter_X_but->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\276\320\264 \320\245", nullptr));
+        change_print_but->setText(QCoreApplication::translate("Interface", "\320\222\321\213\320\262\320\276\320\264 \320\277\320\276\320\273\320\270\320\275\320\276\320\274\320\260", nullptr));
+        index_change_buttom->setText(QCoreApplication::translate("Interface", "\320\230\320\267\320\274\320\265\320\275\320\265\320\275\320\270\320\265 \320\272\320\276\321\200\320\275\321\217 \320\277\320\276 \320\270\320\275\320\264\320\265\320\272\321\201\321\203", nullptr));
         size_label->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\275\320\276\320\262\321\213\320\271 \321\200\320\260\320\267\320\274\320\265\321\200 =", nullptr));
         index_change_label->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\270\320\275\320\264\320\265\320\272\321\201 \320\272\320\276\321\200\320\275\321\217 =", nullptr));
         polin_num_label->setText(QCoreApplication::translate("Interface", "1", nullptr));
         polin_text_label->setText(QCoreApplication::translate("Interface", "\320\232\320\276\321\200\320\265\320\275\321\214 \342\204\226", nullptr));
         an_label_2->setText(QCoreApplication::translate("Interface", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 an", nullptr));
+        x_label->setText(QCoreApplication::translate("Interface", "X = ", nullptr));
         i_label->setText(QCoreApplication::translate("Interface", "+i", nullptr));
         an_label->setText(QCoreApplication::translate("Interface", "a = ", nullptr));
-        x_label->setText(QCoreApplication::translate("Interface", "X = ", nullptr));
-        index_change_buttom->setText(QCoreApplication::translate("Interface", "\320\230\320\267\320\274\320\265\320\275\320\265\320\275\320\270\320\265 \320\272\320\276\321\200\320\275\321\217 \320\277\320\276 \320\270\320\275\320\264\320\265\320\272\321\201\321\203", nullptr));
         exit_buttom->setText(QCoreApplication::translate("Interface", "\320\222\321\213\321\205\320\276\320\264", nullptr));
     } // retranslateUi
 
